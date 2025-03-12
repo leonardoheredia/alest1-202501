@@ -3,42 +3,35 @@ package aula03_exercicio_complexidade;
 public class Exemplo {
 
     public static void main(String[] args) {
-        //digamos que o algoritmo exemplo1
-        //retorna a quantidade de operacoes
-        System.out.println(exemplo5(10));
-        System.out.println(exemplo5(20));
-        System.out.println(exemplo5(30));
-        System.out.println(exemplo5(40));
-        System.out.println(exemplo5(50));
+        System.out.println("n;alg_02(n);alg_03;alg_05");
+        for(int n=1; n<=1000; n+=50) {
+            System.out.println(n + ";" + alg_01(n) + ";" + alg_02(n) + ";" + alg_03(n));
+        }
+
     }
 
-    public static int exemplo1(int n) {
-        int x = 20;
-        int y = 3 * n;
-        return y;
+    public static int alg_02(int n) {
+        int operacoes = 0;
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                operacoes++;
+        return operacoes;
     }
 
-    public static int exemplo2(int n) {
-        n = n * n;
-        int y = n + 50;
-        y = 10;
-        return y;
+    public static int alg_03(int n) {
+        int operacoes = 100000;
+        return operacoes;
     }
 
-    public static int exemplo3(int n) {
-        int z = n * n;
-        return z;
+    public static int alg_01(int n) {
+        int operacoes = 0;
+        for (int i = 0; i < n; i++) {
+            operacoes++;
+        }
+        operacoes = 3*operacoes+300000;
+        return operacoes;
     }
 
-    public static int exemplo4(int n) {
-        int z = n * n * n;
-        return z;
-    }
-
-    public static long exemplo5(int n) {
-        double z = Math.pow((double)2, (double)n);
-        return (long) z;
-    }
 
 
 }
