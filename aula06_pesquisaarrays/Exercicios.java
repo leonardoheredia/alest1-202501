@@ -20,12 +20,22 @@ public class Exercicios {
         int k = 0;
         while(k < m.length) {
             ArrayUtils.imprimir(m);
-            if(a[i] < b[j]) {
+            if(i>=a.length && j<b.length) { //verifica se o vetor A ja foi todo percorrido
+                m[k] = b[j];
+                j++;
+                k++;
+            }
+            else if(j>=b.length && i<a.length) { //verifica se o verto B ja foi todo percorrido
                 m[k] = a[i];
                 i++;
                 k++;
             }
-            else {
+            else if(a[i] < b[j]) { //compara os dois, so entra nessa condicao se A e B tem valores a percorrer
+                m[k] = a[i];
+                i++;
+                k++;
+            }
+            else { //senao esta no vetor A entao esta no vetor B
                 m[k] = b[j];
                 j++;
                 k++;
@@ -34,8 +44,8 @@ public class Exercicios {
         return m;
     }
         public static void main(String[] args) {
-        int[] a = {10, 14, 20};
-        int[] b = {12, 15, 32};
+        int[] a = {10, 14, 20, 90, 100, 110};
+        int[] b = {12, 15, 32, 50, 65};
 
         int[] m = mergearOrdenado(a, b);
         ArrayUtils.imprimir(m);
