@@ -10,8 +10,16 @@ public class ListaEstatica {
         tamanho = 0;
     }
 
-    public void remover(String item) {
+    public boolean remover(String item) {
+        int p = obterPosicao(item);
+        if(p<0) return false;
 
+        for (int i = p; i < tamanho - 1; i++) {
+            itens[i] = itens[i+1];
+        }
+        itens[tamanho-1] = null;
+        tamanho--;
+        return true;
     }
 
     public int obterPosicao(String item) {
