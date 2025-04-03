@@ -25,7 +25,7 @@ public class Exercicios {
                 j++;
                 k++;
             }
-            else if(j>=b.length && i<a.length) { //verifica se o verto B ja foi todo percorrido
+            else if(j>=b.length && i<a.length) { //verifica se o vetor B ja foi todo percorrido
                 m[k] = a[i];
                 i++;
                 k++;
@@ -43,11 +43,29 @@ public class Exercicios {
         }
         return m;
     }
-        public static void main(String[] args) {
+
+    public static boolean buscaBinaria(int[] a, int chave, int inicio, int fim) {
+        int meio = (inicio + fim) / 2;
+        System.out.println(inicio + " " + meio + " " + fim);
+        if(inicio>fim) return false;
+        if(chave==a[meio]) return true;
+        else if(chave>a[meio]){
+            inicio = meio + 1;
+            return buscaBinaria(a, chave, inicio, fim);
+        }
+        else {
+            fim = meio - 1;
+            return buscaBinaria(a, chave, inicio, fim);
+        }
+    }
+    public static void main(String[] args) {
         int[] a = {10, 14, 20, 90, 100, 110};
         int[] b = {12, 15, 32, 50, 65};
 
         int[] m = mergearOrdenado(a, b);
         ArrayUtils.imprimir(m);
+
+        System.out.println(buscaBinaria(a, 10, 0, a.length-1));
+        System.out.println(buscaBinaria(a, 11, 0, a.length-1));
     }
 }
