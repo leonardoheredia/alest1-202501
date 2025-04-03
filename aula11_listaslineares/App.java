@@ -10,5 +10,8 @@ public class App {
 
         System.out.println(l.contem("tomate"));
         System.out.println(l.contem("suco"));
+
+        System.out.println(l.obterPosicao("ovo"));
+        System.out.println(l.obterPosicao("suco"));
     }
 }

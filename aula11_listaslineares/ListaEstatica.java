@@ -10,12 +10,25 @@ public class ListaEstatica {
         tamanho = 0;
     }
 
+    public void remover(String item) {
+
+    }
+
+    public int obterPosicao(String item) {
+        for (int i = 0; i < tamanho; i++) {
+            if(itens[i].equals(item)) return i;
+        }
+        return -1;
+    }
+
+
     public boolean estaVazia() {
-        return false;//IMPLEMENTAR
+        return tamanho==0;
     }
 
     public void limpar() {
-        //limpaa lista
+        itens = new String[CAPACIDADE_INCIAL];
+        tamanho=0;
     }
 
     public boolean contem(String chave) {
