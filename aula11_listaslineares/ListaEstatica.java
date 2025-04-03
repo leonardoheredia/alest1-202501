@@ -10,6 +10,11 @@ public class ListaEstatica {
         tamanho = 0;
     }
 
+    public void adicionar(int posicao, String item) {
+
+    }
+
+
     public boolean remover(String item) {
         int p = obterPosicao(item);
         if(p<0) return false;
