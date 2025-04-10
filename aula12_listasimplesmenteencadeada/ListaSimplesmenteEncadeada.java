@@ -24,8 +24,20 @@ public class ListaSimplesmenteEncadeada {
     }
     public void imprimir() {
         //imprime todos elementos da lista
-
+        Nodo aux = inicio;
+        while (aux!=null) {
+            System.out.println(aux.item);
+            aux = aux.proximo;
+        }
     }
+    public int retornarTamanho() {
+        return -1;
+    }
+
+
+
+
+
 
 
 }
