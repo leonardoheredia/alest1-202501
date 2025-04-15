@@ -5,10 +5,8 @@ public class App {
         ListaDuplamenteEncadeada l = new ListaDuplamenteEncadeada();
         l.adicionar("Cecilia");
         l.adicionar("Lucas");
-        l.imprimir();
-        System.out.println(l.retornarQuantidade());
-
         l.adicionar(1, "Marilia");
+        l.adicionar(0, "Andreas");
         l.imprimir();
     }
 }
