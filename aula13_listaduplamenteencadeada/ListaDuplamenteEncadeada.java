@@ -30,8 +30,13 @@ public class ListaDuplamenteEncadeada {
     }
 
     public int retornarQuantidade() {
-        return 0;
-        //implementar
+        int q = 0;
+        Nodo aux = inicio.proximo;
+        while(aux!=fim) {
+            q++;
+            aux = aux.proximo;
+        }
+        return q;
     }
 
     public void imprimir() {

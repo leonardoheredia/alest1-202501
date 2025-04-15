@@ -6,6 +6,7 @@ public class App {
         l.adicionar("Cecilia");
         l.adicionar("Lucas");
         l.imprimir();
+        System.out.println(l.retornarQuantidade());
 
         l.adicionar(1, "Marilia");
         l.imprimir();
