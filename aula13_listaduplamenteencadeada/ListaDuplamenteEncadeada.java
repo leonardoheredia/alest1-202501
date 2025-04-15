@@ -25,7 +25,18 @@ public class ListaDuplamenteEncadeada {
         fim.anterior = n;
     }
 
+    public void remover(int posicao) {
+        //IMPLEMENTAR
+    }
+    public void remover(String item) {
+        //IMPLEMENTAR
+    }
+    public boolean existe(String item) {
+        //IMPLEMENTAR
+        return false;
+    }
     public void adicionar(int posicao, String item) {
+        //tratar quando nao existe a posicao
         int p = 0;
         Nodo aux = inicio.proximo;
         while (aux!=fim) {
