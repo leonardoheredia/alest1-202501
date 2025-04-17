@@ -17,25 +17,26 @@ public class FilaEstatica {
         return tamanho;
     }
 
+    private void aumentarCapacidade() {
+        capacidade = capacidade*2;
+        String[] novoItens = new String[capacidade];
+        //copiar todo mundo para o novoItens
+        int pos = 0;
+        for (int i = inicio; i <=fim ; i++) {
+            novoItens[pos] = itens[i];
+            pos++;
+        }
+        itens = novoItens;
+        inicio = 0;
+        fim = pos-1;
+    }
     public void enfileirar(String item) {
-       if(tamanho+1<capacidade) {
-           fim++;
-           itens[fim] = item;
-           tamanho++;
+       if(tamanho+1>=capacidade) {
+           aumentarCapacidade();
        }
-       else { //aumentar
-           String[] novoItens = new String[capacidade*2];
-           int pos = 0;
-           for (int i = inicio; i <= fim; i++) {
-               novoItens[pos] = itens[i];
-               pos++;
-           }
-           fim = pos;
-           inicio = 0;
-           this.itens = novoItens;
-           itens[fim] = item;
-           tamanho++;
-       }
+       fim++;
+       itens[fim] = item;
+       tamanho++;
     }
     public String desenfileirar() {
         String retorno = itens[inicio];
