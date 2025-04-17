@@ -20,5 +20,7 @@ public class App {
 
         f.enfileirar("Joao");
         f.imprimir();
+        f.enfileirar("Yan");
+        f.imprimir();
     }
 }

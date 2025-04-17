@@ -33,6 +33,7 @@ public class FilaEstatica {
            fim = pos;
            inicio = 0;
            this.itens = novoItens;
+           itens[fim] = item;
            tamanho++;
        }
     }
