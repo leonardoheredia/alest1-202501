@@ -18,11 +18,23 @@ public class FilaEstatica {
     }
 
     public void enfileirar(String item) {
-        //IMPLEMENTAR O DUPLICAR
-        //VERIFICAR SE O TAMANHO SERA MAIOR QUE A CAPACIDADE
-        fim++;
-        itens[fim] = item;
-        tamanho++;
+       if(tamanho+1<capacidade) {
+           fim++;
+           itens[fim] = item;
+           tamanho++;
+       }
+       else { //aumentar
+           String[] novoItens = new String[capacidade*2];
+           int pos = 0;
+           for (int i = inicio; i <= fim; i++) {
+               novoItens[pos] = itens[i];
+               pos++;
+           }
+           fim = pos;
+           inicio = 0;
+           this.itens = novoItens;
+           tamanho++;
+       }
     }
     public String desenfileirar() {
         String retorno = itens[inicio];
