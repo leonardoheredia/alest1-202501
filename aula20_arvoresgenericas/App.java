@@ -17,5 +17,8 @@ public class App {
         System.out.println();
         t.getRaiz().imprimir("");
 
+        System.out.println();
+        System.out.println(t.getTamanho());
+
     }
 }

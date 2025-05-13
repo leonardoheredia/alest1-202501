@@ -14,6 +14,7 @@ public class ArvoreGenerica {
             Nodo novoFilho = new Nodo(valor);
             if (this.primeiroFilho == null) {
                 primeiroFilho = novoFilho;
+                tamanho++;
                 return;
             }
             Nodo aux = this.primeiroFilho;
@@ -21,6 +22,7 @@ public class ArvoreGenerica {
                 aux = aux.proximoIrmao;
             }
             aux.proximoIrmao = novoFilho;
+            tamanho++;
         }
 
         public void imprimir(String prefixo) {
@@ -37,6 +39,7 @@ public class ArvoreGenerica {
     Nodo raiz;
     public ArvoreGenerica(String valor) {
         raiz = new Nodo(valor);
+        tamanho = 1;
     }
     public Nodo getRaiz() {
         return raiz;
@@ -65,16 +68,16 @@ public class ArvoreGenerica {
             aux = aux.proximoIrmao;
         }
     }
+    private int tamanho;
 
-    public int getAltura() {
-        //IMPLEMENTAR
-        return -1;
-    }
     public int getTamanho() {
-        //IMPLEMENTAR
-        return -1;
+        return tamanho;
     }
     public int getGrau(String chave) {
+        //IMPLEMENTAR
+        return -1;
+    }
+    public int getAltura() {
         //IMPLEMENTAR
         return -1;
     }
