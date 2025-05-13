@@ -74,8 +74,15 @@ public class ArvoreGenerica {
         return tamanho;
     }
     public int getGrau(String chave) {
-        //IMPLEMENTAR
-        return -1;
+        Nodo n = getNodo(chave);
+        if(n==null) return -1;
+        int qtdFilhos = 0;
+        Nodo filho = n.primeiroFilho;
+        while (filho!=null) {
+            qtdFilhos++;
+            filho = filho.proximoIrmao;
+        }
+        return qtdFilhos;
     }
     public int getAltura() {
         //IMPLEMENTAR

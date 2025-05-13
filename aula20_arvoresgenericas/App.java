@@ -19,6 +19,9 @@ public class App {
 
         System.out.println();
         System.out.println(t.getTamanho());
+        System.out.println();
+
+        System.out.println(t.getGrau("L"));
 
     }
 }
