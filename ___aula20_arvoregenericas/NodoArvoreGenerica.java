@@ -1,4 +1,4 @@
-package aula20_arvoregenericas;
+package ___aula20_arvoregenericas;
 
 public class NodoArvoreGenerica {
     public String valor;
@@ -8,14 +8,15 @@ public class NodoArvoreGenerica {
     public NodoArvoreGenerica(String valor) {
         this.valor = valor;
     }
-    public void adicionarFilho(NodoArvoreGenerica filho) {
-        if(primeiroFilho==null) primeiroFilho = filho;
+    public void adicionarFilho(String valor) {
+        NodoArvoreGenerica n = new NodoArvoreGenerica(valor);
+        if(primeiroFilho==null) primeiroFilho = n;
         else {
             NodoArvoreGenerica aux = primeiroFilho;
             while(aux.proximoIrmao!=null) {
                 aux = aux.proximoIrmao;
             }
-            aux.proximoIrmao = filho;
+            aux.proximoIrmao = n;
         }
     }
 
@@ -28,12 +29,5 @@ public class NodoArvoreGenerica {
         if (proximoIrmao != null) {
             proximoIrmao.imprimir(prefixo);
         }
-    }
-
-    public static void main(String[] args) {
-        NodoArvoreGenerica raiz = new NodoArvoreGenerica("A");
-        raiz.adicionarFilho(new NodoArvoreGenerica("B"));
-        raiz.adicionarFilho(new NodoArvoreGenerica("C"));
-        raiz.imprimir("");
     }
 }
