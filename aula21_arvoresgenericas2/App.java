@@ -16,5 +16,13 @@ public class App {
 
         System.out.println(t.obterPai("C"));
 
+        System.out.println("Tamanho = " + t.obterTamanho());
+
+        t.limpar();
+
+        t.adicionarRaiz("NOVARAIZ");
+        t.adicionarFilho("NOVARAIZ", "FILHOA");
+        System.out.println(t.obterTamanho());
+        t.imprimirFilhos("NOVARAIZ");
     }
 }

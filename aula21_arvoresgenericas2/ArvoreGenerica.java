@@ -25,9 +25,17 @@ public class ArvoreGenerica {
         }
     }
     private Nodo raiz;
-    public ArvoreGenerica(String valor) {
+    private int tamanho;
+
+    public void adicionarRaiz(String valor) {
+        if(raiz!=null) return;
         Nodo n = new Nodo(valor);
-        this.raiz = n;
+        raiz = n;
+        tamanho++;
+    }
+
+    public ArvoreGenerica(String valor) {
+        adicionarRaiz(valor);
     }
 
     public void adicionarFilho(String pai, String valor) {
@@ -36,7 +44,7 @@ public class ArvoreGenerica {
 
         Nodo nodoFilho = new Nodo(valor);
         nodoPai.adicionarFilho(nodoFilho);
-
+        tamanho++;
     }
 
     public void imprimirFilhos(String pai) {
@@ -58,12 +66,12 @@ public class ArvoreGenerica {
     }
 
     public int obterTamanho() {
-        //IMPLEMENTAR
-        return 0;
+        return tamanho;
     }
 
     public void limpar() {
-        //IMPLEMENTAR
+        raiz = null;
+        tamanho = 0;
     }
 
     public String obterPai(String chave) {
