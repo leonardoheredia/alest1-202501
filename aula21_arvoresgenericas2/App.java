@@ -7,5 +7,7 @@ public class App {
         t.adicionarFilho("A", "C");
         t.adicionarFilho("A", "D");
 
+        t.imprimirFilhos("A");
+
     }
 }
