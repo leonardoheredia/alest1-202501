@@ -29,14 +29,15 @@ public class ArvoreGenerica {
         this.raiz = n;
     }
     public void adicionarFilho(String pai, String valor) {
-        //IMPLEMENTAR
+        Nodo n = obterNodo(pai);
+        //continuar...
     }
 
     public void imprimirFilhos(String pai) {
         //IMPLEMENTAR
     }
 
-    public Nodo obterNodo(String pai) {
+    private Nodo obterNodo(String pai) {
         //IMPLEMENTAR
         return null;
     }
