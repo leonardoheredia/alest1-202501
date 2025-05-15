@@ -12,6 +12,7 @@ public class ArvoreGenerica {
             filhos = new Nodo[CAPACIDADE];
         }
         public void adicionarFilho(Nodo filho) {
+            filho.pai = this;
             filhos[numFilhos] = filho;
             numFilhos++;
         }
@@ -66,9 +67,9 @@ public class ArvoreGenerica {
     }
 
     public String obterPai(String chave) {
-        //RETORNAR O PAI DE UM VALOR CHAVE
-        //IMPLEMENTAR
-        return null;
+        Nodo n = obterNodo(chave);
+        if(n==null) return null;
+        return n.pai.valor;
     }
 
 }

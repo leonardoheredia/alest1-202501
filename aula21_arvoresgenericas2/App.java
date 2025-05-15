@@ -6,8 +6,15 @@ public class App {
         t.adicionarFilho("A", "B");
         t.adicionarFilho("A", "C");
         t.adicionarFilho("A", "D");
-
+        t.adicionarFilho("B", "X");
+        t.adicionarFilho("B", "Y");
+        t.adicionarFilho("D", "Z");
+        t.adicionarFilho("D", "P");
+        t.adicionarFilho("D", "R");
         t.imprimirFilhos("A");
+        t.imprimirFilhos("D");
+
+        System.out.println(t.obterPai("C"));
 
     }
 }
