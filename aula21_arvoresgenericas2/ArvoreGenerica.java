@@ -56,4 +56,19 @@ public class ArvoreGenerica {
         return null;
     }
 
+    public int obterTamanho() {
+        //IMPLEMENTAR
+        return 0;
+    }
+
+    public void limpar() {
+        //IMPLEMENTAR
+    }
+
+    public String obterPai(String chave) {
+        //RETORNAR O PAI DE UM VALOR CHAVE
+        //IMPLEMENTAR
+        return null;
+    }
+
 }
