@@ -15,6 +15,13 @@ public class ArvoreGenerica {
             filhos[numFilhos] = filho;
             numFilhos++;
         }
+        public void imprimirFilhos() {
+            System.out.println();
+            for (int i = 0; i < numFilhos; i++) {
+                System.out.print(filhos[i] + " ");
+            }
+            System.out.println();
+        }
     }
     private Nodo raiz;
     public ArvoreGenerica(String valor) {
@@ -23,6 +30,15 @@ public class ArvoreGenerica {
     }
     public void adicionarFilho(String pai, String valor) {
         //IMPLEMENTAR
+    }
+
+    public void imprimirFilhos(String pai) {
+        //IMPLEMENTAR
+    }
+
+    public Nodo obterNodo(String pai) {
+        //IMPLEMENTAR
+        return null;
     }
 
 }
