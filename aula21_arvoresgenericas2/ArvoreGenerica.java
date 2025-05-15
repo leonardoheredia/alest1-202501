@@ -80,4 +80,8 @@ public class ArvoreGenerica {
         return n.pai.valor;
     }
 
+    public void imprimirArvoreCompleta() {
+        //IMPRIMIR
+        //IMPLEMENTAR
+    }
 }
