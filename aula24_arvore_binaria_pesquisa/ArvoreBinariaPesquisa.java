@@ -17,8 +17,21 @@ public class ArvoreBinariaPesquisa {
 
     }
 
-    public void inserir(int chave) {
-        Nodo n = new Nodo(chave);
+    public void adicionar(int chave) {
 
+    }
+
+    public void imprimirArvore() {
+        imprimirArvoreRecusivamente(this.raiz, 0);
+    }
+    private void imprimirArvoreRecusivamente(Nodo raiz, int nivel) {
+        if (raiz == null) return;
+        nivel += 5;
+        imprimirArvoreRecusivamente(raiz.filhoDireita, nivel);
+        System.out.print("\n");
+        for (int i = 5; i < nivel; i++) System.out.print(" ");
+        System.out.print(raiz.chave + "\n");
+        for (int i = 5; i < nivel; i++) System.out.print(" ");
+        imprimirArvoreRecusivamente(raiz.filhoEsquerda, nivel);
     }
 }
