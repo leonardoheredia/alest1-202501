@@ -18,5 +18,9 @@ public class App {
         System.out.println(abp.existe(10));
         System.out.println(abp.existe(50));
         System.out.println(abp.existe(100));
+
+        System.out.println();
+        abp.caminharPreOrdem();
+        System.out.println();
     }
 }

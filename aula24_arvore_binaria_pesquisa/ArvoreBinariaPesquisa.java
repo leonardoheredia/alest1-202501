@@ -56,9 +56,15 @@ public class ArvoreBinariaPesquisa {
 
 
     public void caminharPreOrdem() {
-        //IMPIMIR O CAMINHO EM PRE ORDEM
-        //IMPLEMENTAR
+        caminharPreOrdemRecursivo(raiz);
     }
+    private void caminharPreOrdemRecursivo(Nodo n) {
+        if(n==null) return;
+        System.out.print(n.chave + "  ");
+        caminharPreOrdemRecursivo(n.filhoEsquerda);
+        caminharPreOrdemRecursivo(n.filhoDireita);
+    }
+
     public void caminharPosOrdem() {
         //IMPRIMIR O CAMINHO EM POS ORDEM
         //IMPLEMENTAR
