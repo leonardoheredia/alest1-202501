@@ -11,14 +11,16 @@ public class ArvoreBinariaPesquisa {
         }
     }
     private Nodo raiz;
+    private int tamanho;
 
     public ArvoreBinariaPesquisa() {
-
+        tamanho = 0;
     }
     public void adicionar(int chave) {
         Nodo n = new Nodo(chave);
         if(raiz==null)  raiz = n;
         else adicionarRecursivamente(n, raiz);
+        tamanho++;
     }
 
     private void adicionarRecursivamente(Nodo n, Nodo pai) {
@@ -33,18 +35,25 @@ public class ArvoreBinariaPesquisa {
     }
 
     public int getTamanho() {
-        //IMPLEMENTAR
-        return -1;
+        return tamanho;
     }
     public boolean estaVazio() {
-        //IMPLEMENTAR
-        return false;
+        return (raiz==null);
     }
     public boolean existe(int chave) {
-        //RETORNA TRUE SE A CHAVE EXISTE NA ARVORE OU FALSE SE NAO EXISTE
-        //IMPLEMENTAR
-        return false;
+        boolean achou = false;
+        Nodo aux = raiz;
+        while(!achou) {
+            if(chave==aux.chave) achou = true;
+            else {
+                if(chave<aux.chave) aux = aux.filhoEsquerda;
+                else aux = aux.filhoDireita;
+            }
+        }
+        return achou;
     }
+
+
 
     public void caminharPreOrdem() {
         //IMPIMIR O CAMINHO EM PRE ORDEM
