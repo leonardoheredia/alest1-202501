@@ -43,7 +43,7 @@ public class ArvoreBinariaPesquisa {
     public boolean existe(int chave) {
         boolean achou = false;
         Nodo aux = raiz;
-        while(!achou) {
+        while(!achou && aux!=null) {
             if(chave==aux.chave) achou = true;
             else {
                 if(chave<aux.chave) aux = aux.filhoEsquerda;
