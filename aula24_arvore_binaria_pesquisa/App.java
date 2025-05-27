@@ -22,5 +22,9 @@ public class App {
         System.out.println();
         abp.caminharPreOrdem();
         System.out.println();
+
+        System.out.println();
+        abp.caminharPosOrdem();
+        System.out.println();
     }
 }
