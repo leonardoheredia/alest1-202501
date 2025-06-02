@@ -30,12 +30,14 @@ public class ArvoreBinariaPesquisa {
         if (n.chave <= pai.chave) {
             if (pai.filhoEsquerda == null) {
                 pai.filhoEsquerda = n;
+                n.pai = pai;
             } else {
                 adicionarRecursivamente(n, pai.filhoEsquerda);
             }
         } else {
             if (pai.filhoDireita == null) {
                 pai.filhoDireita = n;
+                n.pai = pai;
             } else {
                 adicionarRecursivamente(n, pai.filhoDireita);
             }
@@ -103,7 +105,7 @@ public class ArvoreBinariaPesquisa {
 
     public String caminharLargura() {
         StringBuilder sb = new StringBuilder();
-        Fila fila = new Fila();
+        Fila fila = new Fila(); //melhor se fosse uma fila de Nodos
         if (raiz != null) {
             fila.enfileirar(raiz.chave);
             while (!fila.estaVazia()) {
@@ -157,4 +159,44 @@ public class ArvoreBinariaPesquisa {
             imprimirArvoreRecursivo(n.filhoEsquerda, nivel + 1);
         }
     }
+
+    public boolean remover(int chave) {
+        //IMPLEMENTAR
+        return false;
+    }
+
+    public int encontrarMinimo() {
+        return -1;
+        //IMPLEMENTAR
+    }
+
+    public int encontrarMaximo() {
+        return -1;
+        //IMPLEMENTAR
+    }
+
+    public int contarFolhas() {
+        return -1;
+        //IMPLEMENTAR
+    }
+
+    public int contarInternos() {
+        return -1;
+        //IMPLEMENTAR
+    }
+
+    public int somarChaves() {
+        return -1;
+        //IMPLEMENTAR (SOMAR TODAS AS CHAVES)
+    }
+
+    public String caminharLarguraAvancado() {
+        //IMPLEMENTAR (DEVE CAMINHAR EM LARGURA MAS COLOCANDO CADA NIVEL EM UMA NOVA LINHA
+        //EXEMPLO:
+        //  100
+        //  60 180
+        //  40 200 144
+        return "";
+    }
+
 }
