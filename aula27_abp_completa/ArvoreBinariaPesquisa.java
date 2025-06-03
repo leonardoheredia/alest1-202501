@@ -158,8 +158,19 @@ public class ArvoreBinariaPesquisa {
     }
 
     public boolean remover(int chave) {
-        //IMPLEMENTAR
+        Nodo n = obterNodoRecursivamente(chave, raiz);
+        if(n==null) return false;
+
+        if(ehFolha(n)) {
+            if (n.pai.filhoEsquerda != null && n.pai.filhoEsquerda.chave == chave) n.pai.filhoEsquerda = null;
+            else n.pai.filhoDireita = null;
+            return false;
+        }
         return false;
+    }
+
+    private boolean ehFolha(Nodo n) {
+        return (n.filhoEsquerda==null & n.filhoDireita==null);
     }
 
     public int encontrarMinimo() {
@@ -177,9 +188,18 @@ public class ArvoreBinariaPesquisa {
 
 
     public int encontrarMaximo() {
-        return -1;
-        //IMPLEMENTAR
+        return encontrarMaximo(raiz);
     }
+    private int encontrarMaximo(Nodo n)  {
+        int maior = n.chave;
+        while (n.filhoDireita!=null) {
+            n = n.filhoDireita;
+            if(n.chave > maior) maior = n.chave;
+        }
+        return maior;
+    }
+
+
 
     public int contarFolhas() {
         return -1;

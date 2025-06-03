@@ -16,5 +16,12 @@ public class App {
         System.out.println(t.caminharLargura());
 
         System.out.println("Menor: " + t.encontrarMinimo());
+        System.out.println("Maior: " + t.encontrarMaximo());
+
+        t.remover(200);
+        t.remover(60);
+
+        System.out.println();
+        t.imprimirArvore();
     }
 }
