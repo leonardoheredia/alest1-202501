@@ -14,6 +14,5 @@ public class App {
         t.imprimirArvore();
 
         System.out.println(t.caminharLargura());
-        System.out.println(t.obterNivel(40));
     }
 }

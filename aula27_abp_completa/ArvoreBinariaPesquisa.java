@@ -104,23 +104,20 @@ public class ArvoreBinariaPesquisa {
     }
 
     public String caminharLargura() {
-        StringBuilder sb = new StringBuilder();
-        Fila fila = new Fila(); //melhor se fosse uma fila de Nodos
-        if (raiz != null) {
-            fila.enfileirar(raiz.chave);
-            while (!fila.estaVazia()) {
-                Integer chave = fila.desenfileirar();
-                sb.append(chave).append(" ");
-                Nodo n = obterNodoRecursivamente(chave, raiz);
-                if (n.filhoEsquerda != null) {
-                    fila.enfileirar(n.filhoEsquerda.chave);
-                }
-                if (n.filhoDireita != null) {
-                    fila.enfileirar(n.filhoDireita.chave);
-                }
-            }
+        if(raiz==null) return null;
+        String caminho = "";
+
+        Fila fila = new Fila();
+        Nodo n = raiz;
+        fila.enfileirar(n.chave);
+        while(!fila.estaVazia()) {
+            int e = fila.desenfileirar();
+            caminho = caminho + String.valueOf(e) + " ";
+            n = obterNodoRecursivamente(e, raiz);
+            if(n.filhoEsquerda!=null) fila.enfileirar(n.filhoEsquerda.chave);
+            if(n.filhoDireita!=null) fila.enfileirar(n.filhoDireita.chave);
         }
-        return sb.toString();
+        return caminho;
     }
 
     public int obterAltura() {
