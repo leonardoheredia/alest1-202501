@@ -163,9 +163,18 @@ public class ArvoreBinariaPesquisa {
     }
 
     public int encontrarMinimo() {
-        return -1;
-        //IMPLEMENTAR
+        return encontrarMinimo(raiz);
     }
+
+    private int encontrarMinimo(Nodo n) {
+        int menor = n.chave;
+        while(n.filhoEsquerda!=null) {
+            n = n.filhoEsquerda;
+            if(n.chave < menor) menor = n.chave;
+        }
+        return  menor;
+    }
+
 
     public int encontrarMaximo() {
         return -1;
