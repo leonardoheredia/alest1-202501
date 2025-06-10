@@ -6,9 +6,8 @@ public class App {
         avl.adicionar(30);
         avl.adicionar(15);
         avl.adicionar(80);
-        avl.adicionar(10);
-        avl.adicionar(8);
-       // avl.adicionar(90);
+        avl.adicionar(90);
+        avl.adicionar(100);
        // avl.adicionar(70);
 
         avl.imprimirArvore();

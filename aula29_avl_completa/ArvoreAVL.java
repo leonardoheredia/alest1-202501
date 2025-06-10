@@ -76,9 +76,10 @@ public class ArvoreAVL {
         return Math.max(alturaEsquerda, alturaDireita) + 1;
     }
     private int obterFatorBalanceamento(Nodo n) {
+        if(n==null) return 0;
         if(n.esquerda==null && n.direita==null) return 0;
-        if(n.esquerda!=null && n.direita==null) return obterAlturaRecursivo(n.esquerda) + 1;
-        if(n.esquerda==null && n.direita!=null) return obterAlturaRecursivo(n.direita) + 1;
+        if(n.esquerda!=null && n.direita==null) return 1+obterAlturaRecursivo(n.esquerda);
+        if(n.esquerda==null && n.direita!=null) return 1-obterAlturaRecursivo(n.direita);
 
         int alturaEsquerda = obterAlturaRecursivo(n.esquerda);
         int alturaDireita = obterAlturaRecursivo(n.direita);
