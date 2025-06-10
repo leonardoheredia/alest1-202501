@@ -28,6 +28,7 @@ public class ArvoreAVL {
             return;
         }
         adicionarRecursivo(n, raiz);
+        verificarBalanceamento(n);
 
     }
     private void adicionarRecursivo(Nodo n, Nodo pai) {
@@ -84,4 +85,21 @@ public class ArvoreAVL {
         return (alturaEsquerda - alturaDireita) ;
     }
 
+    private void verificarBalanceamento(Nodo n) {
+        while (n != null) {
+            int balanceamento = obterFatorBalanceamento(n);
+            if (balanceamento > 1) {
+                if (obterFatorBalanceamento(n.esquerda) < 0) {
+                    //rotacaoEsquerda(n.esquerda);
+                }
+                //rotacaoDireita(n);
+            } else if (balanceamento < -1) {
+                if (obterFatorBalanceamento(n.direita) > 0) {
+                    //rotacaoDireita(n.direita);
+                }
+                //rotacaoEsquerda(n);
+            }
+            n = n.pai;
+        }
+    }
 }
