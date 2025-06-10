@@ -89,11 +89,14 @@ public class ArvoreAVL {
         while (n != null) {
             int balanceamento = obterFatorBalanceamento(n);
             if (balanceamento > 1) {
+                System.out.println("xDesbalanceou em " + n.chave);
                 if (obterFatorBalanceamento(n.esquerda) < 0) {
+
                     //rotacaoEsquerda(n.esquerda);
                 }
                 //rotacaoDireita(n);
             } else if (balanceamento < -1) {
+                System.out.println("yDesbalanceou em " + n.chave);
                 if (obterFatorBalanceamento(n.direita) > 0) {
                     //rotacaoDireita(n.direita);
                 }
